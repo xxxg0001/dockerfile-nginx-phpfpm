@@ -1,0 +1,13 @@
+nginx:
+ image: nginx
+ ports:
+  - "80:80"
+ links:
+  - phpfpm
+ volumes:
+   - /home/docker/nginx/conf.d/:/etc/nginx/conf.d/
+   - /home/docker/nginx/wwwlogs/:/var/www/logs/
+   - /home/docker/nginx/wwwroot/:/var/www/html/
+
+phpfpm:
+  image: php:7-fpm
