@@ -11,3 +11,5 @@ nginx:
 
 phpfpm:
   image: php:7-fpm
+volumes:
+   - /home/docker/nginx/wwwroot/:/var/www/html/
